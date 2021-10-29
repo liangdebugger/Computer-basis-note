@@ -101,3 +101,23 @@ std::ostream& operator<<(std::ostream& os, const LinkList& list)
 	}
 	return os;
 }
+
+Node* LinkList::Find(int d)
+{
+	Node* p = head->next;
+	while (p->data != d)
+		p = p->next;
+	return p;
+}
+
+Node* LinkList::FindPrevious(int d)
+{
+	Node* p = head;
+	Node* pr = p->next;
+	while (pr->data != d)
+	{
+		p = p->next;
+		pr = pr->next;
+	}
+	return p;
+}
